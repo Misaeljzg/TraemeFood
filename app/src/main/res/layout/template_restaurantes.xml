@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="viewModel"
-            type="com.misaeljzg.traemefood.restaurantes.RestaurantesVM" />
+            name="restaurante"
+            type="com.misaeljzg.traemefood.utils.Restaurante" />
     </data>
 <LinearLayout
     android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                 android:layout_marginBottom="0dp"
                 android:drawableStart="@drawable/namerestaurante"
                 android:fontFamily="@font/titleslittlesquare"
-                android:text="Titulo"
+                android:text="@{restaurante.nombreRes}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#424949"
                 android:textSize="23sp" />
@@ -53,7 +53,7 @@
 
                 android:fontFamily="@font/carlitobold"
                 android:padding="7dp"
-                android:text="Descripcion"
+                android:text="@{restaurante.descRes}"
                 android:textColor="#B3B6B7"
                 android:textSize="17sp" />
 
@@ -62,10 +62,9 @@
                 android:layout_width="207dp"
                 android:layout_height="50dp"
                 android:drawableStart="@drawable/direccion"
-
                 android:fontFamily="@font/carlitobolditalic"
                 android:padding="7dp"
-                android:text="Direccion "
+                android:text="@{restaurante.calle + ',' + ' ' + restaurante.colonia}"
                 android:textColor="#16A085"
                 android:textSize="16sp" />
 
@@ -105,7 +104,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
-                    app:imageUrl="@{viewModel.restaurante.imgPath}"
+                    app:imageUrl="@{restaurante.imgPath}"
                     tools:srcCompat="@tools:sample/avatars" />
             </androidx.cardview.widget.CardView>
 

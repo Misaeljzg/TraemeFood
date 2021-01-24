@@ -13,11 +13,13 @@ import java.lang.Exception
 
 class RestaurantesVM : ViewModel(){
 
-    private val _status = MutableLiveData<String>()
-    val response: LiveData<String> get() = _status
+    enum class ApiStatus {CARGANDO, ERROR, TERMINADO}
 
-    private val _restaurante = MutableLiveData<Restaurante>()
-    val restaurante : LiveData<Restaurante> get() = _restaurante
+    private val _status = MutableLiveData<ApiStatus>()
+    val status: LiveData<ApiStatus> get() = _status
+
+    private val _restaurantes = MutableLiveData<List<Restaurante>>()
+    val restaurantes : LiveData<List<Restaurante>> get() = _restaurantes
 
 
     init {
@@ -32,13 +34,15 @@ class RestaurantesVM : ViewModel(){
     private fun getRestaurants(){
         viewModelScope.launch {
             try {
-                var listResult = ApiClient.retrofitService.getRestaurantes()
-                if(listResult.isNotEmpty()){
-                    _restaurante.value = listResult[0]
-                }
-                //_status.value = "Success: ${listResult.size} Restaurantes encontrados!"
+                _status.value = ApiStatus.CARGANDO
+                val listResult = ApiClient.retrofitService.getRestaurantes()
+                _status.value = ApiStatus.TERMINADO
+                _restaurantes.value = listResult
+
+
             }catch (e: Exception){
-                _status.value = "Falla: ${e.message}"
+                _status.value = ApiStatus.ERROR
+                _restaurantes.value = ArrayList()
             }
         }
     }
