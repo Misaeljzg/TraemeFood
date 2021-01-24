@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="170dp"
+        android:padding="10dp"
+        android:background="@drawable/cuadrofondo"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="218dp"
+            android:layout_height="154dp"
+
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/tv_vistarestaurantes_NombreRestaurante"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="0dp"
+                android:drawableStart="@drawable/namerestaurante"
+                android:fontFamily="@font/titleslittlesquare"
+                android:text="Titulo"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#424949"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/tv_vistarestaurantes_Descripcion"
+                android:layout_width="207dp"
+                android:layout_height="53dp"
+                android:drawableStart="@drawable/descripcion"
+
+                android:fontFamily="@font/carlitobold"
+                android:padding="7dp"
+                android:text="Descripcion"
+                android:textColor="#B3B6B7"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_vistarestaurantes_Direccion"
+                android:layout_width="207dp"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/direccion"
+
+                android:fontFamily="@font/carlitobolditalic"
+                android:padding="7dp"
+                android:text="Direccion "
+                android:textColor="#16A085"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="153dp"
+
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="100dp">
+
+                <ImageView
+                    android:id="@+id/iv_vistarestaurantes_foto"
+
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.972"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginLeft="0dp"
+                android:drawableStart="@drawable/time"
+                android:fontFamily="@font/titleslittlesquare"
+                android:padding="7dp"
+                android:text="9:00AM 20:00PM"
+                android:textColor="#2471A3"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

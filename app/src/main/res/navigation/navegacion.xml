@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegacion"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.misaeljzg.traemefood.sesion.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_restaurantesFragment"
+            app:destination="@id/restaurantesFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registroFragment"
+            app:destination="@id/registroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantesFragment"
+        android:name="com.misaeljzg.traemefood.restaurantes.RestaurantesFragment"
+        android:label="fragment_restaurantes"
+        tools:layout="@layout/fragment_restaurantes" />
+    <fragment
+        android:id="@+id/registroFragment"
+        android:name="com.misaeljzg.traemefood.sesion.RegistroFragment"
+        android:label="RegistroFragment"
+        tools:layout="@layout/fragment_registro"/>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.misaeljzg.traemefood.AcercaDeFragment"
+        android:label="fragment_acerca_de"
+        tools:layout="@layout/fragment_acerca_de" />
+</navigation>
