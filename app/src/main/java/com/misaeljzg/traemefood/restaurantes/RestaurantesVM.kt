@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.google.protobuf.Api
 import com.misaeljzg.traemefood.utils.ApiClient
 import com.misaeljzg.traemefood.utils.ApiService
+import com.misaeljzg.traemefood.utils.Restaurante
 import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
@@ -29,15 +30,15 @@ class RestaurantesVM : ViewModel(){
     }
 
     private fun getRestaurants(){
-        ApiClient.retrofitService.getRestaurantes().enqueue(object: retrofit2.Callback<String>{
-            override fun onFailure(call: Call<String>, t: Throwable) {
+        ApiClient.retrofitService.getRestaurantes().enqueue(object: retrofit2.Callback<List<Restaurante>>{
+            override fun onFailure(call: Call<List<Restaurante>>, t: Throwable) {
                 _response.value = "Failure" + t.message
                 Log.d("JSON", t.message!!)
             }
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                _response.value = response.body()
-                Log.d("JSON", response.body()!!)
+            override fun onResponse(call: Call<List<Restaurante>>, response: Response<List<Restaurante>>) {
+                _response.value = "Succes: ${response.body()?.size} Restaurantes reunidos!"
+                Log.d("JSON", response.body()?.size.toString())
             }
         })
     }
