@@ -4,20 +4,20 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.protobuf.Api
+import androidx.lifecycle.viewModelScope
 import com.misaeljzg.traemefood.utils.ApiClient
 import com.misaeljzg.traemefood.utils.ApiService
 import com.misaeljzg.traemefood.utils.Restaurante
-import retrofit2.Call
-import retrofit2.Response
-import javax.security.auth.callback.Callback
+import kotlinx.coroutines.launch
+import java.lang.Exception
 
 class RestaurantesVM : ViewModel(){
 
-    private val _response = MutableLiveData<String>()
-    val response: LiveData<String> get() = _response
+    private val _status = MutableLiveData<String>()
+    val response: LiveData<String> get() = _status
 
-    var mAPIService: ApiService? = null
+    private val _restaurante = MutableLiveData<Restaurante>()
+    val restaurante : LiveData<Restaurante> get() = _restaurante
 
 
     init {
@@ -30,17 +30,17 @@ class RestaurantesVM : ViewModel(){
     }
 
     private fun getRestaurants(){
-        ApiClient.retrofitService.getRestaurantes().enqueue(object: retrofit2.Callback<List<Restaurante>>{
-            override fun onFailure(call: Call<List<Restaurante>>, t: Throwable) {
-                _response.value = "Failure" + t.message
-                Log.d("JSON", t.message!!)
+        viewModelScope.launch {
+            try {
+                var listResult = ApiClient.retrofitService.getRestaurantes()
+                if(listResult.isNotEmpty()){
+                    _restaurante.value = listResult[0]
+                }
+                //_status.value = "Success: ${listResult.size} Restaurantes encontrados!"
+            }catch (e: Exception){
+                _status.value = "Falla: ${e.message}"
             }
-
-            override fun onResponse(call: Call<List<Restaurante>>, response: Response<List<Restaurante>>) {
-                _response.value = "Succes: ${response.body()?.size} Restaurantes reunidos!"
-                Log.d("JSON", response.body()?.size.toString())
-            }
-        })
+        }
     }
 
 

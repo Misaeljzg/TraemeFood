@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.misaeljzg.traemefood.R
 import com.misaeljzg.traemefood.databinding.FragmentLoginBinding
 import com.misaeljzg.traemefood.databinding.FragmentRestaurantesBinding
+import com.misaeljzg.traemefood.databinding.TemplateRestaurantesBinding
 import com.misaeljzg.traemefood.sesion.SesionVM
 import kotlinx.coroutines.launch
 
@@ -29,7 +30,7 @@ class RestaurantesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        val binding = FragmentRestaurantesBinding.inflate(inflater)
+        val binding = TemplateRestaurantesBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         setHasOptionsMenu(true)

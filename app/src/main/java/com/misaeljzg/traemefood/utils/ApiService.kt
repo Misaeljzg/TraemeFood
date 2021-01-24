@@ -2,6 +2,7 @@ package com.misaeljzg.traemefood.utils
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -22,7 +23,7 @@ private val retrofit = Retrofit.Builder()
 
 interface ApiService {
     @GET("restaurantes.php")
-    fun getRestaurantes() : Call<List<Restaurante>>
+    suspend fun getRestaurantes() : List<Restaurante>
 }
 object ApiClient {
     val retrofitService: ApiService by lazy {
