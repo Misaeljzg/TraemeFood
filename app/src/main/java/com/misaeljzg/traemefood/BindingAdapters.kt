@@ -4,16 +4,15 @@ import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
-import androidx.databinding.adapters.LinearLayoutBindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.misaeljzg.traemefood.restaurantes.ACRestaurantes
+import com.misaeljzg.traemefood.restaurantes.RestaurantesAC
 import com.misaeljzg.traemefood.restaurantes.RestaurantesVM
 import com.misaeljzg.traemefood.utils.Restaurante
 
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Restaurante>?){
-    val adapter = recyclerView.adapter as ACRestaurantes
+    val adapter = recyclerView.adapter as RestaurantesAC
     adapter.submitList(data)
 }
 

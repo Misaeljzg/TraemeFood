@@ -47,7 +47,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginBottom="480dp"
             android:fontFamily="@font/titleslittlesquare"
-            android:text="9:00AM - 20:00PM"
+            android:text="@{viewModel.selectedRestaurant.horario}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#34495E"
             android:textSize="15dp"
@@ -63,7 +63,7 @@
             android:layout_marginEnd="64dp"
             android:layout_marginBottom="480dp"
             android:fontFamily="@font/carlitobolditalic"
-            android:text="De $25 a $175"
+            android:text="@{viewModel.selectedRestaurant.precioInferior + 'a' + viewModel.selectedRestaurant.precioSuperior}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#DC7633"
             android:textSize="15dp"
@@ -96,8 +96,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_detRest_Nombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/uj"
-            app:imageUrl="@{viewModel.selectedRestaurant.imgPath}"/>
+            app:srcCompat="@drawable/uj" />
 
         <ImageView
             android:id="@+id/iv_detRest_FotoLocal"
@@ -114,6 +113,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.043"
+            app:imageUrl="@{viewModel.selectedRestaurant.imgPath}"
             tools:srcCompat="@tools:sample/avatars" />
 
 

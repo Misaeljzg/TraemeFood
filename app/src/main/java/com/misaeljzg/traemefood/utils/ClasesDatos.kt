@@ -11,5 +11,13 @@ data class Restaurante(
     @Json(name = "Descripcion") val descRes: String,
     @Json(name = "Calle") val calle: String,
     @Json(name = "Colonia") val colonia: String,
-    @Json(name = "Imagen_Path") val imgPath: String
+    @Json(name = "Imagen_Path") val imgPath: String,
+    @Json(name = "Horario") val horario: String,
+    @Json(name = "Precio_Inferior") val precioInferior: String,
+    @Json(name = "Precio_Superior") val precioSuperior: String
+) : Parcelable
+
+@Parcelize
+data class Platillo(
+    @Json (name = "ID_Platillo") val idPlatillo: String
 ) : Parcelable

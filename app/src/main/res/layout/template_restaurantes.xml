@@ -116,7 +116,7 @@
                 android:drawableStart="@drawable/time"
                 android:fontFamily="@font/titleslittlesquare"
                 android:padding="7dp"
-                android:text="9:00AM 20:00PM"
+                android:text="@{restaurante.horario}"
                 android:textColor="#2471A3"
                 android:textSize="13sp" />
 

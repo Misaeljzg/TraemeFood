@@ -3,14 +3,13 @@ package com.misaeljzg.traemefood.restaurantes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.adapters.LinearLayoutBindingAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.misaeljzg.traemefood.databinding.TemplateRestaurantesBinding
 import com.misaeljzg.traemefood.utils.Restaurante
 
-class ACRestaurantes(private val onClickListener: OnClickListener) : ListAdapter<Restaurante, ACRestaurantes.RestauranteViewHolder>(DiffCallback) {
+class RestaurantesAC(private val onClickListener: OnClickListener) : ListAdapter<Restaurante, RestaurantesAC.RestauranteViewHolder>(DiffCallback) {
 
     class RestauranteViewHolder(private var binding: TemplateRestaurantesBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(restaurante: Restaurante){
@@ -30,7 +29,7 @@ class ACRestaurantes(private val onClickListener: OnClickListener) : ListAdapter
         }
 
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ACRestaurantes.RestauranteViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantesAC.RestauranteViewHolder {
         return RestauranteViewHolder(TemplateRestaurantesBinding.inflate(LayoutInflater.from(parent.context)))
     }
 

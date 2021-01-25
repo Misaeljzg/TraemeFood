@@ -13,5 +13,4 @@ class MenuVM (restaurante: Restaurante, app: Application) : AndroidViewModel(app
     init{
         _selectedRestaurant.value = restaurante
     }
-
 }
