@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="platillo"
+            type="com.misaeljzg.traemefood.utils.Platillo" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:background="#FFFFFF"
     android:padding="10dp"
-    android:layout_height="match_parent"
-    android:focusable="false">
-
-
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/tv_menu_NombrePlatillo"
         android:layout_width="wrap_content"
@@ -17,7 +21,7 @@
         android:layout_marginEnd="28dp"
         android:drawableStart="@drawable/food"
         android:fontFamily="@font/titleslittlesquare"
-        android:text="Cortes Argentinos"
+        android:text="@{platillo.nombrePlatillo}"
         android:textColor="#424949"
         android:textSize="23sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_menu_DescripcionPlatillo"
@@ -37,7 +41,7 @@
         android:layout_marginBottom="16dp"
         android:drawableStart="@drawable/ingredientes"
         android:fontFamily="@font/carlitobold"
-        android:text="Alitas con mucho chile (O sea la descripcion del platillo)"
+        android:text="@{platillo.ingredientes}"
         android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_cantidad"
@@ -57,7 +61,7 @@
         android:drawableStart="@drawable/money"
         android:fontFamily="@font/carlitobolditalic"
         android:padding="10dp"
-        android:text="300"
+        android:text="@{platillo.precioPlatillo}"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_add"
@@ -135,7 +139,7 @@
 
         <ImageView
             android:id="@+id/iv_menu_ImagenPlatillo"
-
+            app:imageUrl="@{platillo.imagenPlatillo}"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_marginStart="0dp"
@@ -165,8 +169,7 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_menu_PrecioPlatillo"
-        app:layout_constraintTop_toBottomOf="@+id/card_views"
-        android:onClick="ingresar"/>
+        app:layout_constraintTop_toBottomOf="@+id/card_views" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -182,6 +185,7 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
 
 
 

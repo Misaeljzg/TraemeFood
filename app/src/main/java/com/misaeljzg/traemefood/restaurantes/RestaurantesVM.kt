@@ -4,19 +4,25 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.protobuf.Api
+import androidx.lifecycle.viewModelScope
 import com.misaeljzg.traemefood.utils.ApiClient
 import com.misaeljzg.traemefood.utils.ApiService
-import retrofit2.Call
-import retrofit2.Response
-import javax.security.auth.callback.Callback
+import com.misaeljzg.traemefood.utils.Restaurante
+import kotlinx.coroutines.launch
+import java.lang.Exception
 
 class RestaurantesVM : ViewModel(){
 
-    private val _response = MutableLiveData<String>()
-    val response: LiveData<String> get() = _response
+    enum class ApiStatus {CARGANDO, ERROR, TERMINADO}
 
-    var mAPIService: ApiService? = null
+    private val _status = MutableLiveData<ApiStatus>()
+    val status: LiveData<ApiStatus> get() = _status
+
+    private val _restaurantes = MutableLiveData<List<Restaurante>>()
+    val restaurantes : LiveData<List<Restaurante>> get() = _restaurantes
+
+    private val _navigateToSelectedRestaurant = MutableLiveData<Restaurante>()
+    val navigateToSelectedRestaurant: LiveData<Restaurante> get() = _navigateToSelectedRestaurant
 
 
     init {
@@ -28,18 +34,28 @@ class RestaurantesVM : ViewModel(){
         Log.i("RestaurantesViewModel", "RestaurantesVM destroyed")
     }
 
-    private fun getRestaurants(){
-        ApiClient.retrofitService.getRestaurantes().enqueue(object: retrofit2.Callback<String>{
-            override fun onFailure(call: Call<String>, t: Throwable) {
-                _response.value = "Failure" + t.message
-                Log.d("JSON", t.message!!)
-            }
+    fun displayRestaurantMenu(restaurante: Restaurante){
+        _navigateToSelectedRestaurant.value = restaurante
+    }
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                _response.value = response.body()
-                Log.d("JSON", response.body()!!)
+    fun displayRestaurantMenuComplete(){
+        _navigateToSelectedRestaurant.value = null
+    }
+
+    private fun getRestaurants(){
+        viewModelScope.launch {
+            try {
+                _status.value = ApiStatus.CARGANDO
+                val listResult = ApiClient.retrofitService.getRestaurantes()
+                _status.value = ApiStatus.TERMINADO
+                _restaurantes.value = listResult
+
+
+            }catch (e: Exception){
+                _status.value = ApiStatus.ERROR
+                _restaurantes.value = ArrayList()
             }
-        })
+        }
     }
 
 
