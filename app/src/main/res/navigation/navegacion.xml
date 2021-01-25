@@ -20,7 +20,11 @@
         android:id="@+id/restaurantesFragment"
         android:name="com.misaeljzg.traemefood.restaurantes.RestaurantesFragment"
         android:label="fragment_restaurantes"
-        tools:layout="@layout/fragment_restaurantes" />
+        tools:layout="@layout/fragment_restaurantes">
+        <action
+            android:id="@+id/action_restaurantesFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registroFragment"
         android:name="com.misaeljzg.traemefood.sesion.RegistroFragment"
@@ -31,4 +35,14 @@
         android:name="com.misaeljzg.traemefood.AcercaDeFragment"
         android:label="fragment_acerca_de"
         tools:layout="@layout/fragment_acerca_de" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.misaeljzg.traemefood.menu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+    <argument
+        android:name="selectedRestaurant"
+        app:argType="com.misaeljzg.traemefood.utils.Restaurante"/>
+    </fragment>
+
 </navigation>

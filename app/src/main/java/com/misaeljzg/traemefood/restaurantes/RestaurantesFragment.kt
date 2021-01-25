@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
 import com.misaeljzg.traemefood.R
@@ -32,7 +34,15 @@ class RestaurantesFragment : Fragment() {
         val binding = FragmentRestaurantesBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.rvLista.adapter = ACRestaurantes()
+        binding.rvLista.adapter = ACRestaurantes(ACRestaurantes.OnClickListener{
+            viewModel.displayRestaurantMenu(it)
+        })
+        viewModel.navigateToSelectedRestaurant.observe(viewLifecycleOwner, Observer {
+            if(null != it){
+                this.findNavController().navigate(RestaurantesFragmentDirections.actionRestaurantesFragmentToMenuFragment(it))
+                viewModel.displayRestaurantMenuComplete()
+            }
+        })
         setHasOptionsMenu(true)
         return binding.root
 

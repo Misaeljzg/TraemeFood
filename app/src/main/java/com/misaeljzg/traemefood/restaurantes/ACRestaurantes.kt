@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.misaeljzg.traemefood.databinding.TemplateRestaurantesBinding
 import com.misaeljzg.traemefood.utils.Restaurante
 
-class ACRestaurantes : ListAdapter<Restaurante, ACRestaurantes.RestauranteViewHolder>(DiffCallback) {
+class ACRestaurantes(private val onClickListener: OnClickListener) : ListAdapter<Restaurante, ACRestaurantes.RestauranteViewHolder>(DiffCallback) {
 
     class RestauranteViewHolder(private var binding: TemplateRestaurantesBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(restaurante: Restaurante){
@@ -36,6 +36,12 @@ class ACRestaurantes : ListAdapter<Restaurante, ACRestaurantes.RestauranteViewHo
 
     override fun onBindViewHolder(holder: RestauranteViewHolder, position: Int) {
         val restaurante = getItem(position)
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(restaurante)
+        }
         holder.bind(restaurante)
+    }
+    class OnClickListener(val clickListener: (restaurante:Restaurante) -> Unit){
+        fun onClick(restaurante: Restaurante) = clickListener(restaurante)
     }
 }

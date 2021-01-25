@@ -21,6 +21,9 @@ class RestaurantesVM : ViewModel(){
     private val _restaurantes = MutableLiveData<List<Restaurante>>()
     val restaurantes : LiveData<List<Restaurante>> get() = _restaurantes
 
+    private val _navigateToSelectedRestaurant = MutableLiveData<Restaurante>()
+    val navigateToSelectedRestaurant: LiveData<Restaurante> get() = _navigateToSelectedRestaurant
+
 
     init {
         Log.i(" RestaurantesViewModel", "RestaurantesVM created")
@@ -29,6 +32,14 @@ class RestaurantesVM : ViewModel(){
     override fun onCleared() {
         super.onCleared()
         Log.i("RestaurantesViewModel", "RestaurantesVM destroyed")
+    }
+
+    fun displayRestaurantMenu(restaurante: Restaurante){
+        _navigateToSelectedRestaurant.value = restaurante
+    }
+
+    fun displayRestaurantMenuComplete(){
+        _navigateToSelectedRestaurant.value = null
     }
 
     private fun getRestaurants(){
