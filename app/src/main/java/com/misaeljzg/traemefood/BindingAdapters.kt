@@ -6,13 +6,21 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.misaeljzg.traemefood.menu.MenuAC
 import com.misaeljzg.traemefood.restaurantes.RestaurantesAC
 import com.misaeljzg.traemefood.restaurantes.RestaurantesVM
+import com.misaeljzg.traemefood.utils.Platillo
 import com.misaeljzg.traemefood.utils.Restaurante
 
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Restaurante>?){
     val adapter = recyclerView.adapter as RestaurantesAC
+    adapter.submitList(data)
+}
+
+@BindingAdapter("listMenu")
+fun bindMenuView(recyclerView: RecyclerView, data: List<Platillo>?){
+    val adapter = recyclerView.adapter as MenuAC
     adapter.submitList(data)
 }
 

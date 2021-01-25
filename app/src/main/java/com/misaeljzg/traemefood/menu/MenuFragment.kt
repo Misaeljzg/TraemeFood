@@ -14,15 +14,11 @@ class MenuFragment : Fragment() {
         val application = requireNotNull(activity).application
         val binding = FragmentMenuBinding.inflate(inflater)
         binding.lifecycleOwner = this
-        val restaurante = MenuFragmentArgs.fromBundle(
-            requireArguments()
-        ).selectedRestaurant
-        val viewModelFactory =
-            MenuVMFactory(
-                restaurante,
-                application
-            )
+        val restaurante = MenuFragmentArgs.fromBundle(requireArguments()).selectedRestaurant
+        val viewModelFactory = MenuVMFactory(restaurante, application)
+        binding.lifecycleOwner = this
         binding.viewModel = ViewModelProvider(this, viewModelFactory).get(MenuVM::class.java)
+        binding.menuLista.adapter = MenuAC()
         return binding.root
     }
 }

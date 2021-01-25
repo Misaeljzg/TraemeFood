@@ -70,13 +70,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/menu_lista"
-            android:layout_width="367dp"
-            android:layout_height="416dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/cuadrofondo2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:listMenu="@{viewModel.menu}"
             android:layout_marginEnd="8dp"
             android:padding="5dp"
             android:layout_marginBottom="8dp"
@@ -86,7 +87,9 @@
             app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_detRest_Descripcion"
-            app:layout_constraintVertical_bias="0.333" />
+            app:layout_constraintVertical_bias="0.333"
+            tools:itemCount="16"
+            tools:listitem="@layout/template_menu"/>
 
         <ImageView
             android:id="@+id/imageView"

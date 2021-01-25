@@ -24,6 +24,9 @@ private val retrofit = Retrofit.Builder()
 interface ApiService {
     @GET("restaurantes.php")
     suspend fun getRestaurantes() : List<Restaurante>
+
+    @POST("platillos.php")
+    suspend fun getMenu(@Field("platillo") idplatillo: String) : List<Platillo>
 }
 object ApiClient {
     val retrofitService: ApiService by lazy {
