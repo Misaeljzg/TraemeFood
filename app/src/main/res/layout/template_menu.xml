@@ -169,8 +169,7 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_menu_PrecioPlatillo"
-        app:layout_constraintTop_toBottomOf="@+id/card_views"
-        android:onClick="ingresar"/>
+        app:layout_constraintTop_toBottomOf="@+id/card_views" />
 
     <ImageView
         android:id="@+id/imageView"

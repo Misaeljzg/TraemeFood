@@ -25,8 +25,9 @@ interface ApiService {
     @GET("restaurantes.php")
     suspend fun getRestaurantes() : List<Restaurante>
 
-    @POST("platillos.php")
-    suspend fun getMenu(@Field("platillo") idplatillo: String) : List<Platillo>
+    @POST("menu.php")
+    @FormUrlEncoded
+    suspend fun getMenu(@Field("restaurante") idrestaurante: String) : List<Platillo>
 }
 object ApiClient {
     val retrofitService: ApiService by lazy {
