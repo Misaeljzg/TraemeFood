@@ -148,7 +148,7 @@
             android:layout_marginTop="28dp"
             android:background="@drawable/botonverde"
             android:drawableRight="@drawable/flecha"
-            android:fontFamily="@font/carlitobold"
+
 
             android:padding="17dp"
             android:textColor="#FDFEFE"
