@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
+        
         android:theme="@style/Theme.TraemeFood">
         <activity android:name=".MainActivity">
             <intent-filter>
