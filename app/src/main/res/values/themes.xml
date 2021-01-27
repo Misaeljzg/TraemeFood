@@ -5,7 +5,7 @@
         <item name="colorPrimary">#e65100</item>
         <item name="colorPrimaryVariant">#e65100</item>
         <item name="android:colorPrimaryDark">#ac1900</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
         <item name="colorAccent">#ff833a</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
