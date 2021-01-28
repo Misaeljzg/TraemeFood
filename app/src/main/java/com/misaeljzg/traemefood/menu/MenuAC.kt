@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.misaeljzg.traemefood.databinding.TemplateMenuBinding
 import com.misaeljzg.traemefood.utils.Platillo
+import kotlinx.android.synthetic.main.template_menu.view.*
 
 class MenuAC : ListAdapter<Platillo, MenuAC.MenuVH>(DiffCallback){
 
@@ -33,6 +34,7 @@ class MenuAC : ListAdapter<Platillo, MenuAC.MenuVH>(DiffCallback){
 
     override fun onBindViewHolder(holder: MenuVH, position: Int) {
         val platillo = getItem(position)
+        val btnadd = holder.itemView.btn_add
         holder.bind(platillo)
     }
 }

@@ -3,19 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navegacion"
-    app:startDestination="@id/loginFragment">
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.misaeljzg.traemefood.sesion.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_restaurantesFragment"
-            app:destination="@id/restaurantesFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_registroFragment"
-            app:destination="@id/registroFragment" />
-    </fragment>
+    app:startDestination="@id/restaurantesFragment">
     <fragment
         android:id="@+id/restaurantesFragment"
         android:name="com.misaeljzg.traemefood.restaurantes.RestaurantesFragment"
@@ -25,11 +13,6 @@
             android:id="@+id/action_restaurantesFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/registroFragment"
-        android:name="com.misaeljzg.traemefood.sesion.RegistroFragment"
-        android:label="RegistroFragment"
-        tools:layout="@layout/fragment_registro"/>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.misaeljzg.traemefood.AcercaDeFragment"
