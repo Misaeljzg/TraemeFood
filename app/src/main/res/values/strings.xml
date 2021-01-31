@@ -7,7 +7,7 @@
     <string name="hint_reg_nombre">Ingresa tu(s) nombre(s)</string>
     <string name="hint_reg_apellidos">Ingresa tus apellidos</string>
     <string name="hint_reg_email">Ingresa tu email</string>
-    <string name="hint_reg_telefono">Ingresa tu número telefónico</string>
+    <string name="hint_reg_telefono">Número telefónico</string>
     <string name="hint_reg_password">Ingresa tu contraseña</string>
     <string name="hint_reg_password_conf">Confirma tu contraseña</string>
     <string name="hint_reg_direccion">Ingresa tu dirección</string>
@@ -16,4 +16,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">SOCOSAMEX</string>
     <string name="acerca_de">Acerca de</string>
+
+
+
 </resources>
