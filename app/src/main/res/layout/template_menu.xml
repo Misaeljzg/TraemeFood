@@ -16,8 +16,8 @@
 
     <TextView
         android:id="@+id/tv_menu_NombrePlatillo"
-        android:layout_width="222dp"
-        android:layout_height="32dp"
+        android:layout_width="220dp"
+        android:layout_height="29dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="28dp"
@@ -37,15 +37,13 @@
         android:id="@+id/tv_menu_DescripcionPlatillo"
         android:layout_width="222dp"
         android:layout_height="78dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="13dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="16dp"
-        android:drawableStart="@drawable/ingredientes"
+
         android:fontFamily="@font/carlitoregular"
         android:text="@{platillo.ingredientes}"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_cantidad"
         app:layout_constraintEnd_toStartOf="@+id/card_views"
         app:layout_constraintHorizontal_bias="1.0"
@@ -57,7 +55,7 @@
         android:layout_width="80dp"
         android:layout_height="39dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/cuadrofondo4"
         android:drawableStart="@drawable/money"
@@ -68,7 +66,7 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_add"
         app:layout_constraintStart_toEndOf="@+id/tv_cantidad"
-        app:layout_constraintTop_toBottomOf="@+id/tv_menu_DescripcionPlatillo"  />
+        app:layout_constraintTop_toBottomOf="@+id/tv_menu_DescripcionPlatillo" />
 
     <Button
         android:id="@+id/btn_mas"
@@ -94,7 +92,7 @@
         android:layout_width="61dp"
         android:layout_height="40dp"
         android:layout_marginStart="57dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/botonblanco"
         android:padding="10dp"
@@ -167,10 +165,11 @@
         android:background="@drawable/botonnaranja"
         android:fontFamily="@font/carlitobold"
         android:onClick="ingresar"
-        android:padding="0dp"
+        android:padding="12dp"
+        android:drawableRight="@drawable/addfood"
         android:text="Añadir"
         android:textColor="#FFFFFF"
-        android:textSize="11sp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_menu_PrecioPlatillo"
         app:layout_constraintTop_toBottomOf="@+id/card_views" />
