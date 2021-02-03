@@ -72,12 +72,9 @@
         android:id="@+id/btn_mas"
         android:layout_width="60dp"
         android:layout_height="30dp"
-
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-
         android:layout_marginEnd="105dp"
-
         android:background="@drawable/whitecircle"
         android:drawableRight="@drawable/add"
         android:padding="20dp"
@@ -96,7 +93,7 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/botonblanco"
         android:padding="10dp"
-        android:text="5"
+        android:text="0"
         android:textColor="#343434"
         android:textSize="17dp"
         app:layout_constraintEnd_toStartOf="@+id/tv_menu_PrecioPlatillo"
@@ -107,12 +104,9 @@
         android:id="@+id/btn_menos"
         android:layout_width="60dp"
         android:layout_height="30dp"
-
         android:layout_marginStart="35dp"
         android:layout_marginTop="20dp"
-
         android:layout_marginEnd="10dp"
-
         android:background="@drawable/whitecircle"
         android:drawableRight="@drawable/less"
         android:padding="20dp"

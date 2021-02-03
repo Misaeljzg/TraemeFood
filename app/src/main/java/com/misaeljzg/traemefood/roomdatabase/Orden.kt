@@ -7,8 +7,6 @@ import com.misaeljzg.traemefood.utils.Platillo
 
 @Entity (tableName = "orden_tabla")
 data class Orden(
-    @PrimaryKey(autoGenerate = true)
-    var idOrden: Long = 0L,
     @ColumnInfo(name = "id_Restaurante")
     var idRest: String = "",
     @ColumnInfo(name = "id_platillo")
@@ -19,4 +17,7 @@ data class Orden(
     var cantidadPlatillo: Int = 0,
     @ColumnInfo(name = "precio_total")
     var total: Float = 0f
-)
+){
+    @PrimaryKey(autoGenerate = true)
+    var idOrden: Int = 0
+}

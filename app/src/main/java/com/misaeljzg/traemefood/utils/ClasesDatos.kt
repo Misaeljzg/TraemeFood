@@ -20,6 +20,7 @@ data class Restaurante(
 @Parcelize
 data class Platillo(
     @Json (name = "ID_Platillo") val idPlatillo: String,
+    @Json (name = "ID_Restaurante") val idRestaurante: String,
     @Json (name = "Nombre_Platillo") val nombrePlatillo: String,
     @Json (name = "Ingredientes") val ingredientes: String,
     @Json (name = "Precio") val precioPlatillo: String,
