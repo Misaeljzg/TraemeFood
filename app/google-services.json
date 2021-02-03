@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "951288262133",
+    "project_id": "traemefood-f3260",
+    "storage_bucket": "traemefood-f3260.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951288262133:android:9b339d9e1c481b024944bc",
+        "android_client_info": {
+          "package_name": "com.misaeljzg.traemefood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "951288262133-b1atr0tl4dsmsv4g9jp7khrugs0c05nn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.misaeljzg.traemefood",
+            "certificate_hash": "eaa11d75abf6ed23da37719ce400954127714da0"
+          }
+        },
+        {
+          "client_id": "951288262133-qv41pk04unq0m9n0j1ts0el44o0sh670.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6SVEERBqbGF_qCVBmOAxFRvrd2uVPdKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "951288262133-qv41pk04unq0m9n0j1ts0el44o0sh670.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

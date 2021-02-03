@@ -114,6 +114,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_Reg_Telefono" />
 
+    <ImageView
+        android:id="@+id/passwordvisi"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_baseline_visibility_24"
+        app:layout_constraintBottom_toBottomOf="@+id/et_Reg_Password"
+        app:layout_constraintEnd_toEndOf="@+id/et_Reg_Password"
+        app:layout_constraintTop_toTopOf="@+id/et_Reg_Password"
+        app:layout_constraintVertical_bias="0.52" />
+
     <EditText
         android:id="@+id/etReg_Email"
         android:layout_width="@dimen/regBoxesWidth"
@@ -179,6 +190,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_Reg_Password" />
+    <ImageView
+        android:id="@+id/passwordvisi_conf"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_baseline_visibility_24"
+        app:layout_constraintBottom_toBottomOf="@+id/et_Reg_Password_Conf"
+        app:layout_constraintEnd_toEndOf="@+id/et_Reg_Password_Conf"
+        app:layout_constraintTop_toTopOf="@+id/et_Reg_Password_Conf"
+        app:layout_constraintVertical_bias="0.52" />
 
     <Button
         android:id="@+id/btnReg_send"
@@ -200,7 +221,9 @@
         app:layout_constraintStart_toEndOf="@+id/ib_Selectfoto"
         app:layout_constraintTop_toBottomOf="@+id/et_Reg_Password_Conf" />
 
-    <ImageButton
+
+
+    <Button
         android:id="@+id/ib_Selectfoto"
         android:layout_width="54dp"
         android:layout_height="54dp"
@@ -211,7 +234,23 @@
         app:layout_constraintEnd_toStartOf="@+id/btnReg_send"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_Reg_Password_Conf"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:text="Ingresa una foto"
+        android:textSize="8sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/botonnaranja"
+         />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectphoto_mini"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnReg_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_Reg_Password_Conf"
+        app:layout_constraintVertical_bias="0.44" />
 
     <ImageView
         android:id="@+id/imageView2"
