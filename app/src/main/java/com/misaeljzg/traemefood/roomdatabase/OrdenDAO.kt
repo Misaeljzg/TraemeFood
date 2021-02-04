@@ -11,8 +11,8 @@ interface OrdenDAO {
     suspend fun update(orden: Orden)
 
     @Query("SELECT * from orden_tabla WHERE id_Restaurante = :key")
-    suspend fun get(key:Long) : List<Orden?>
+    suspend fun get(key: Int) : List<Orden?>
 
-    @Query("DELETE FROM orden_tabla")
-    suspend fun clear()
+    @Query("DELETE FROM orden_tabla WHERE id_Restaurante = :key")
+    suspend fun clear(key: String)
 }

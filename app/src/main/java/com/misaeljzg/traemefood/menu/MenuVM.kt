@@ -24,9 +24,20 @@ class MenuVM (restaurante: Restaurante, app: Application) : AndroidViewModel(app
     private val _menu = MutableLiveData<List<Platillo>>()
     val menu : LiveData<List<Platillo>> get() = _menu
 
+    private val _navigateToSelectedDish = MutableLiveData<Platillo>()
+    val navigateToSelectedDish: LiveData<Platillo> get() = _navigateToSelectedDish
+
     init{
         _selectedRestaurant.value = restaurante
         getMenu()
+    }
+
+    fun displayPlatillo(platillo: Platillo){
+        _navigateToSelectedDish.value = platillo
+    }
+
+    fun displayPlatilloComplete(){
+        _navigateToSelectedDish.value = null
     }
 
     private fun getMenu() {

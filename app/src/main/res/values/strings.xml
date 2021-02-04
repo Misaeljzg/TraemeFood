@@ -13,6 +13,7 @@
     <string name="hint_reg_direccion">Ingresa tu dirección</string>
     <string name="btn_registro_enviar">Registrar</string>
     <string name="title_vistarestaurantes_busqueda"> Buscar</string>
+    <string name="btn_add">Pagar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">SOCOSAMEX</string>
     <string name="acerca_de">Acerca de</string>

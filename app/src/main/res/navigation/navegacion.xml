@@ -26,6 +26,17 @@
     <argument
         android:name="selectedRestaurant"
         app:argType="com.misaeljzg.traemefood.utils.Restaurante"/>
+        <action
+            android:id="@+id/action_menuFragment_to_platilloFragment"
+            app:destination="@id/platilloFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/platilloFragment"
+        android:name="PlatilloFragment"
+        android:label="PlatilloFragment" >
+        <argument
+            android:name="selectedPlatillo"
+            app:argType="com.misaeljzg.traemefood.utils.Platillo" />
     </fragment>
 
 </navigation>
