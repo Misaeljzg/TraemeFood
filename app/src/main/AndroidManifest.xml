@@ -13,28 +13,23 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.TraemeFood">
-
-        <activity android:name=".sesion.ForgotActivity"></activity>
-
-
-
-        <activity android:name=".sesion.RegistroActivity"  android:theme="@style/AppTheme" ></activity>
-
-        <activity android:name=".sesion.LoginActivity"  android:theme="@style/SplashTheme">
-
+        <activity android:name=".carrito.CarritoActivity"></activity>
+        <activity android:name=".sesion.ForgotActivity" />
+        <activity
+            android:name=".sesion.RegistroActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".sesion.LoginActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme">
-        </activity>
-
-
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

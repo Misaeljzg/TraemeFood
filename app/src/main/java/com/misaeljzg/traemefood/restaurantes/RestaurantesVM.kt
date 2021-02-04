@@ -29,10 +29,6 @@ class RestaurantesVM : ViewModel(){
         Log.i(" RestaurantesViewModel", "RestaurantesVM created")
         getRestaurants()
     }
-    override fun onCleared() {
-        super.onCleared()
-        Log.i("RestaurantesViewModel", "RestaurantesVM destroyed")
-    }
 
     fun displayRestaurantMenu(restaurante: Restaurante){
         _navigateToSelectedRestaurant.value = restaurante
