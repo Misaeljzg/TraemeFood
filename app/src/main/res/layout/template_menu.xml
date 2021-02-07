@@ -158,7 +158,6 @@
         android:layout_marginEnd="30dp"
         android:background="@drawable/botonnaranja"
         android:fontFamily="@font/carlitobold"
-        android:onClick="ingresar"
         android:padding="12dp"
         android:drawableRight="@drawable/addfood"
         android:text="Añadir"
