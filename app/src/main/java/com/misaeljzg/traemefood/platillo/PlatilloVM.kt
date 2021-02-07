@@ -46,9 +46,11 @@ class PlatilloVM(val database:OrdenDAO, platillo: Platillo, app: Application) : 
     }
 
     fun onAddToOrder (){
-        viewModelScope.launch {
-            val orden = Orden(platillo.idRestaurante,  platillo.idPlatillo, platillo.nombrePlatillo, _cantidadPlatillo.value!!, _total.value!!)
-            insert(orden)
+        if(_cantidadPlatillo.value != 0) {
+            viewModelScope.launch {
+                val orden = Orden(platillo.idRestaurante, platillo.idPlatillo, platillo.nombrePlatillo, _cantidadPlatillo.value!!, _total.value!!)
+                insert(orden)
+            }
         }
     }
 }
