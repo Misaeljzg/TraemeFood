@@ -17,136 +17,89 @@
 
         <TextView
             android:id="@+id/tv_vistarestaurantes_NombreRestaurante"
-            android:layout_width="245dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
-            android:drawableStart="@drawable/namerestaurante"
-            android:fontFamily="@font/carlitobold"
+            android:layout_width="244dp"
+            android:layout_height="24dp"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="2dp"
+            android:drawableStart="@drawable/circle"
+            android:fontFamily="@font/osbold"
             android:text="@{restaurante.nombreRes}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#424949"
-            android:textSize="27sp"
+            android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/tv_vistarestaurantes_Descripcion"
-            app:layout_constraintEnd_toStartOf="@+id/card_view"
-            app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/card_view"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <TextView
             android:id="@+id/tv_vistarestaurantes_Descripcion"
-            android:layout_width="210dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="244dp"
+            android:layout_height="31dp"
 
-            android:layout_marginEnd="46dp"
-            android:layout_marginBottom="3dp"
-
-            android:fontFamily="@font/carlitoregular"
-
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/oslight"
             android:text="@{restaurante.descRes}"
-            android:textColor="#393939"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toStartOf="@+id/card_view"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_vistarestaurantes_NombreRestaurante" />
+            android:textColor="#979A9A"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_vistarestaurantes_Direccion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/card_view" />
 
         <TextView
             android:id="@+id/tv_vistarestaurantes_Direccion"
-            android:layout_width="214dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="240dp"
+            android:layout_height="21dp"
 
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="172dp"
-            android:layout_marginBottom="1dp"
-            android:drawableStart="@drawable/direccion"
-            android:fontFamily="@font/carlitoitalic"
-android:padding="6dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/ossemibolditalic"
             android:text="@{restaurante.calle + ',' + ' ' + restaurante.colonia}"
-            android:textColor="#393939"
-            android:textSize="15sp"
+            android:textColor="#F39C12"
+            android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.133" />
+            app:layout_constraintStart_toEndOf="@+id/card_view" />
 
         <androidx.cardview.widget.CardView
-                    android:id="@+id/card_view"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginEnd="20dp"
-                    app:cardCornerRadius="100dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tv_vistarestaurantes_NombreRestaurante"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/iv_vistarestaurantes_foto"
-
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="30dp"
-                        android:layout_marginBottom="16dp"
-                        app:imageUrl="@{restaurante.imgPath}"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.972"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0"
-                        tools:srcCompat="@tools:sample/avatars" />
-                </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="211dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="163dp"
-            android:drawableStart="@drawable/time"
-            android:fontFamily="@font/carlitoregular"
-
-            android:text="@{restaurante.horario}"
-            android:textColor="#393939"
-            android:textSize="17sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.307"
+            android:id="@+id/card_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_vistarestaurantes_NombreRestaurante"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_vistarestaurantes_Descripcion" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="214dp"
-            android:layout_height="2dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="129dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.137"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            app:srcCompat="@drawable/lineadiv" />
+            <ImageView
+                android:id="@+id/iv_vistarestaurantes_foto"
+
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+
+                app:imageUrl="@{restaurante.imgPath}"
+
+
+                tools:srcCompat="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="76dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="51dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/botonverde"
+            android:layout_width="56dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/botonnaranja"
             android:drawableRight="@drawable/flecha"
             android:fontFamily="@font/carlitobold"
             android:padding="17dp"
@@ -154,9 +107,39 @@ android:padding="6dp"
             android:textColor="#FDFEFE"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.91"
+            app:layout_constraintStart_toEndOf="@+id/card_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vistarestaurantes_Direccion" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="240dp"
+            android:layout_marginBottom="15dp"
+            android:drawableStart="@drawable/estrella"
+            android:fontFamily="@font/osbold"
+            android:text="Disponible en Tizayuca"
+            android:textColor="#1BBE67"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/card_view"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="336dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="49dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:srcCompat="@drawable/grisbar" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
