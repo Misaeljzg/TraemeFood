@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".carrito.CarritoActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_carrito"
         android:layout_width="415dp"
-        android:layout_height="387dp"
+        android:layout_height="327dp"
         android:layout_marginTop="1dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="90dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/tv_carrito_total"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:layout_width="326dp"
         android:layout_height="28dp"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="38dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/osregular"
@@ -37,13 +37,14 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_carrito"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_carrito_cancelar" />
 
     <Button
         android:id="@+id/btn_carrito_pagar"
-        android:layout_width="300dp"
-        android:layout_height="56dp"
+        android:layout_width="251dp"
+        android:layout_height="35dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="70dp"
         android:layout_marginEnd="56dp"
@@ -84,7 +85,7 @@
         android:layout_width="121dp"
         android:layout_height="20dp"
         android:layout_marginEnd="144dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="128dp"
         android:drawableStart="@drawable/paymoney"
         android:fontFamily="@font/osbold"
         android:text="TextView"
@@ -92,17 +93,16 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_carrito_pagar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/rv_carrito" />
+        app:layout_constraintStart_toEndOf="@+id/textView17" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="110dp"
         android:fontFamily="@font/oslight"
         android:text="Costo Total:"
         android:textSize="15sp"
@@ -110,5 +110,17 @@
         app:layout_constraintEnd_toStartOf="@+id/tv_carrito_total"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_carrito" />
+
+    <com.stripe.android.view.CardInputWidget
+        android:id="@+id/cardInputWidget"
+        android:layout_width="387dp"
+        android:layout_height="47dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_carrito_total"
+        app:layout_constraintVertical_bias="0.183"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
