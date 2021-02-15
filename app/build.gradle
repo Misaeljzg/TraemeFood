@@ -105,6 +105,13 @@ dependencies {
     implementation 'com.xwray:groupie:2.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    // Stripe Android SDK
+    implementation 'com.stripe:stripe-android:16.2.0'
+
+    // OkHttp & GSON
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
