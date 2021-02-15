@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -78,6 +79,7 @@ class CarritoActivity : AppCompatActivity(), CoroutineScope {
         val rv: RecyclerView = findViewById(R.id.rv_carrito)
         val cardInputWidget = findViewById<CardInputWidget>(R.id.cardInputWidget)
 
+        rv.layoutManager = LinearLayoutManager(this)
         launch {
             val orders = database.getOrdenes(idRest!!)
             rv.adapter = CarritoAC(orders as MutableList<Orden>, coroutineContext, database)
