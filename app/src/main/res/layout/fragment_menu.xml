@@ -18,17 +18,17 @@
         <TextView
             android:id="@+id/tv_detRest_Nombre"
             android:layout_width="219dp"
-            android:layout_height="36dp"
+            android:layout_height="wrap_content"
 
             android:layout_marginStart="10dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="40dp"
             android:drawableStart="@drawable/circle"
             android:fontFamily="@font/ossimeregular"
             android:text="@{viewModel.selectedRestaurant.nombreRes}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#494949"
-            android:textSize="26sp"
+            android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/tv_detRest_Descripcion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/card_view"
@@ -38,55 +38,57 @@
         <TextView
             android:id="@+id/tv_detRest_Horario"
             android:layout_width="175dp"
-            android:layout_height="17dp"
+            android:layout_height="wrap_content"
 
             android:layout_marginStart="37dp"
-            android:layout_marginEnd="201dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginBottom="20dp"
             android:drawableStart="@drawable/tiempoperfil"
             android:fontFamily="@font/osregular"
             android:text="@{viewModel.selectedRestaurant.horario}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#CACFD2"
+            android:textColor="#BDC3C7"
             android:textSize="12dp"
             app:layout_constraintBottom_toTopOf="@+id/menu_lista"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
         <TextView
             android:id="@+id/tv_detRest_Precios"
             android:layout_width="172dp"
-            android:layout_height="13dp"
+            android:layout_height="wrap_content"
 
 
             android:layout_marginStart="36dp"
 
-            android:layout_marginEnd="203dp"
             android:layout_marginBottom="5dp"
             android:drawableStart="@drawable/money"
             android:fontFamily="@font/osregular"
             android:text="@{viewModel.selectedRestaurant.precioInferior + 'a' + viewModel.selectedRestaurant.precioSuperior}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#CACFD2"
+            android:textColor="#BDC3C7"
             android:textSize="12dp"
             app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/menu_lista"
-            android:layout_width="400dp"
-            android:layout_height="427dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical"
-            android:padding="2dp"
+            android:layout_width="376dp"
+            android:layout_height="393dp"
+            android:layout_marginStart="10dp"
 
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.214"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detRest_Horario"
             app:listMenu="@{viewModel.menu}"
             tools:itemCount="16"
             tools:listitem="@layout/template_menu" />
@@ -97,7 +99,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginStart="38dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="13dp"
             android:layout_marginBottom="10dp"
             app:cardCornerRadius="100dp"
@@ -108,9 +110,9 @@
 
             <ImageView
                 android:id="@+id/iv_detRest_FotoLocal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+android:layout_gravity="center"
                 android:contentDescription="Imagen del Restaurante"
 
                 app:imageUrl="@{viewModel.selectedRestaurant.imgPath}"
@@ -124,50 +126,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="37dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="273dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/osregular"
             android:text="Rango de precios:"
-            android:textColor="#CACFD2"
+            android:textColor="#BDC3C7"
             android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_detRest_Precios"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_view" />
+
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="37dp"
-            android:layout_marginEnd="201dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/osregular"
             android:text="Horarios dispobles de servicio:"
-            android:textColor="#CACFD2"
+            android:textColor="#BDC3C7"
             android:textSize="12dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_detRest_Horario"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_detRest_Precios" />
-
 
         <TextView
             android:id="@+id/tv_detRest_Descripcion"
             android:layout_width="219dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
 
             android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="43dp"
-            android:layout_marginBottom="46dp"
+            android:layout_marginBottom="104dp"
             android:fontFamily="@font/oslight"
+
             android:text="@{viewModel.selectedRestaurant.descRes}"
+
+
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-
             android:textColor="#000000"
-
-
             android:textSize="14dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_detRest_Precios"
             app:layout_constraintEnd_toEndOf="parent"

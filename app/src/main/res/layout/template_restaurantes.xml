@@ -18,11 +18,14 @@
         <androidx.cardview.widget.CardView
 
             android:id="@+id/cardView3"
-            android:layout_width="369dp"
-            android:layout_height="178dp"
+            android:layout_width="358dp"
+            android:layout_height="194dp"
             android:layout_gravity="center"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
-            android:background="#F1F1F1"
+
+            android:layout_marginEnd="5dp"
+            app:cardBackgroundColor="#F8F9F9"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +34,7 @@
 
             <TextView
                 android:id="@+id/tv_vistarestaurantes_NombreRestaurante"
-                android:layout_width="225dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
 
                 android:layout_marginStart="130dp"
@@ -52,25 +55,25 @@
 
             <TextView
                 android:id="@+id/tv_vistarestaurantes_Descripcion"
-                android:layout_width="230dp"
-                android:layout_height="31dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
 
                 android:layout_marginStart="130dp"
                 android:layout_marginTop="75dp"
                 android:fontFamily="@font/oslight"
                 android:text="@{restaurante.descRes}"
                 android:textColor="#979A9A"
-                android:textSize="13sp"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_vistarestaurantes_Direccion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/card_view" />
 
             <TextView
                 android:id="@+id/tv_vistarestaurantes_Direccion"
-                android:layout_width="230dp"
-                android:layout_height="21dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="130dp"
-                android:layout_marginTop="110dp"
+                android:layout_marginTop="120dp"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="2dp"
                 android:fontFamily="@font/ossemibolditalic"
@@ -97,8 +100,9 @@
                 <ImageView
                     android:id="@+id/iv_vistarestaurantes_foto"
 
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    
                     android:layout_gravity="center"
 
                     app:imageUrl="@{restaurante.imgPath}"
@@ -109,8 +113,8 @@
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="165dp"
-                android:layout_height="22dp"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="240dp"
@@ -119,7 +123,7 @@
                 android:fontFamily="@font/osbold"
                 android:text="Disponible en Tizayuca"
                 android:textColor="#1BBE67"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toTopOf="@+id/card_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -127,16 +131,16 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="211dp"
-                android:layout_height="26dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="130dp"
-                android:layout_marginTop="138dp"
+                android:layout_marginTop="150dp"
                 android:layout_marginEnd="163dp"
                 android:drawableStart="@drawable/time"
                 android:fontFamily="@font/osregular"
                 android:text="@{restaurante.horario}"
-                android:textColor="#B3B6B7"
-                android:textSize="16sp"
+                android:textColor="#A6ACAF"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.307"
                 app:layout_constraintStart_toStartOf="parent"

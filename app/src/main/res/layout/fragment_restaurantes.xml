@@ -16,12 +16,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
-            android:layout_width="393dp"
+            android:layout_width="370dp"
 
-            android:layout_height="190dp"
+            android:layout_height="160dp"
 
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="130dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             app:cardCornerRadius="20dp"
@@ -43,40 +43,41 @@
 
             <TextView
                 android:id="@+id/textView14"
-                android:layout_width="296dp"
+                android:layout_width="261dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/osbold"
                 android:text="Tráeme Food se encarga de llevar tu comida hasta la puerta de tu casa"
                 android:textColor="#FFFFFF"
-                android:textSize="17sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="134dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
-                android:layout_marginTop="110dp"
+                android:layout_marginTop="100dp"
                 android:background="@drawable/botonnaranja"
                 android:fontFamily="@font/osregular"
                 android:padding="10dp"
                 android:text="Tizayuca, Hidalgo"
                 android:textColor="#FFFFFF"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="340dp"
+            android:layout_width="51dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
             android:fontFamily="@font/osregular"
             android:text="¡Hola!"
-            android:textSize="25sp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView12"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.027"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,30 +85,31 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="18dp"
             android:fontFamily="@font/osregular"
             android:text="Ordena tus alimentos con nosotros"
-            android:textSize="16sp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView13"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.056"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="243dp"
-            android:layout_marginBottom="22dp"
+            android:layout_width="172dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
             android:fontFamily="@font/osbold"
-            android:text="Restaurante:"
+            android:text="Restaurantes:"
             android:textColor="#000000"
-            android:textSize="22sp"
+            android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/card_view"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.038"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -126,7 +128,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintHorizontal_bias="0.842"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_view"
             app:listData="@{viewModel.restaurantes}"
