@@ -12,6 +12,9 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.misaeljzg.traemefood.MainActivity
 import com.misaeljzg.traemefood.R
+import com.misaeljzg.traemefood.chat.ChatLogActivity
+import com.misaeljzg.traemefood.chat.LatestMessagesActivity
+import com.misaeljzg.traemefood.chat.NewMessagerActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_registro.*
 
@@ -44,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(correo , password)
                 .addOnCompleteListener {
                     if (!it.isSuccessful) return@addOnCompleteListener
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, NewMessagerActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                 }

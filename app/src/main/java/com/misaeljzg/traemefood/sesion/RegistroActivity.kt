@@ -27,17 +27,17 @@ class RegistroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registro)
 
         btnReg_send.setOnClickListener {
-            val nombre = findViewById<EditText>(R.id.etReg_Nombre).text.toString()
-            val apellidos = findViewById<EditText>(R.id.etReg_Apellidos).text.toString()
-            val direccion = findViewById<EditText>(R.id.etReg_Direccion).text.toString()
-            val email = findViewById<EditText>(R.id.etReg_Email).text.toString()
-            val numero = findViewById<EditText>(R.id.et_Reg_Telefono).text.toString()
-            val contrasena = findViewById<EditText>(R.id.et_Reg_Password).text.toString()
-            val confcontrasena = findViewById<EditText>(R.id.et_Reg_Password_Conf).text.toString()
+            val nombre  = etReg_Nombre.text.toString()
+            val apellidos  = etReg_Apellidos.toString()
+            val direccion  =etReg_Direccion.text.toString()
+            val contrasena = et_Reg_Password.text.toString()
+            val repetir_contrasena = et_Reg_Password_Conf.text.toString()
+            val  numero  = et_Reg_Telefono .text.toString()
+            val correo = etReg_Email.text.toString()
             val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-            if (nombre.isEmpty() || direccion.isEmpty() || contrasena.isEmpty() || apellidos.isEmpty() || numero.isEmpty() ||email.isEmpty()|| confcontrasena.isEmpty()){
+            if (nombre.isEmpty() || direccion.isEmpty() || contrasena.isEmpty() || apellidos.isEmpty() || numero.isEmpty() ||correo.isEmpty()|| repetir_contrasena.isEmpty()){
                 Toast.makeText(this,"Verifica Todos Los Campos No Puede Quedar Ningun Campo Vacio",Toast.LENGTH_SHORT).show()
-                if (email.matches(emailPattern.toRegex())){
+                if (correo.matches(emailPattern.toRegex())){
 
                 }else{
 
@@ -46,7 +46,7 @@ class RegistroActivity : AppCompatActivity() {
                 }
                 return@setOnClickListener
             }
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,contrasena)
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(correo,contrasena)
                     .addOnCompleteListener{
                         if (!it.isSuccessful) return@addOnCompleteListener
                         uploadImageToFirebaseStorage()
@@ -93,7 +93,7 @@ class RegistroActivity : AppCompatActivity() {
     private fun  uploadImageToFirebaseStorage() {
         if (selectedPhotoUri == null) return
         val filename = UUID.randomUUID().toString()
-        val ref = FirebaseStorage.getInstance().getReference("/images$  filename")
+        val ref = FirebaseStorage.getInstance().getReference("/images_User$filename")
         ref.putFile(selectedPhotoUri!!)
             .addOnSuccessListener {
                 ref.downloadUrl.addOnSuccessListener {
@@ -105,7 +105,7 @@ class RegistroActivity : AppCompatActivity() {
     private fun saveUserToFirebaseDatabase(profileImageUrl: String){
         val uid=  FirebaseAuth.getInstance().uid?: ""
         val ref= FirebaseDatabase.getInstance().getReference("/user/$uid")
-        val user = User (uid, etReg_Nombre.text.toString(), etReg_Apellidos .text.toString(), etReg_Direccion.text.toString(), etReg_Email .text.toString() ,et_Reg_Telefono.text.toString(),profileImageUrl)
+        val user = User (uid, etReg_Nombre.text.toString(), etReg_Apellidos.text.toString(),etReg_Email.text.toString() ,etReg_Direccion.text.toString(), et_Reg_Telefono .text.toString() ,profileImageUrl)
         ref.setValue(user)
             .addOnSuccessListener {
                 val intent = Intent(this,LoginActivity::class.java)

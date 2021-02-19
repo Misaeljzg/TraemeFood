@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sesion.ChatLogActivity"
-    android:background="#FFFFFF">
+    tools:context=".chat.ChatLogActivity">
 
     <LinearLayout
         android:id="@+id/ll_layout_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/botonnaranja"
+        android:background="@drawable/background_type"
         android:orientation="horizontal">
 
 
@@ -22,13 +22,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight=".5"
-            android:background="@drawable/edittextlogin"
-            android:hint="Escribe un Mensaje....."
+            android:background="@drawable/background_type"
+            android:hint="Escribe un Mensaje"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
             android:inputType="textShortMessage"
             android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="#000000"
-            android:textColorHint="#CACFD2" />
+            android:singleLine="true" />
 
         <Button
             android:id="@+id/send_button_chat_log"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@android:drawable/ic_menu_send"
+            android:background="@drawable/ic_baseline_send_24"
             android:textColor="@android:color/white" />
 
 
@@ -55,11 +55,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-
-
-
-
-
 
 </RelativeLayout>
