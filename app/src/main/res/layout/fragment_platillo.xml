@@ -20,8 +20,12 @@
         <androidx.cardview.widget.CardView
 
             android:id="@+id/cardView"
+
             android:layout_width="370dp"
             android:layout_height="650dp"
+
+            android:layout_width="360dp"
+            android:layout_height="614dp"
 
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
@@ -37,7 +41,7 @@
                 android:id="@+id/card_views"
                 android:layout_width="330dp"
                 android:layout_height="220dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="90dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -61,13 +65,13 @@
                 android:layout_width="312dp"
                 android:layout_height="wrap_content"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="340dp"
                 android:drawableStart="@drawable/circle"
                 android:fontFamily="@font/osbold"
                 android:text="@{viewModel.selectedPlatillo.nombrePlatillo}"
                 android:textColor="#424949"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_platillo_descripcion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,15 +79,15 @@
 
             <TextView
                 android:id="@+id/tv_platillo_descripcion"
-                android:layout_width="207dp"
-                android:layout_height="65dp"
+                android:layout_width="201dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="140dp"
                 android:layout_marginTop="440dp"
 
                 android:fontFamily="@font/oslight"
                 android:text="@{viewModel.selectedPlatillo.ingredientes}"
                 android:textColor="#979A9A"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_platillo_cantidad"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -137,6 +141,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="440dp"
                 android:drawableStart="@drawable/moneycomida"
+
                 android:fontFamily="@font/osbold"
                 android:padding="7dp"
                 android:text="@{viewModel.selectedPlatillo.precioPlatillo}"
@@ -149,8 +154,14 @@
                 android:id="@+id/btn_anadir_a_orden"
                 android:layout_width="316dp"
                 android:layout_height="47dp"
+
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="521dp"
+
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="541dp"
+
+
                 android:background="@drawable/botonnaranja"
                 android:drawableRight="@drawable/addfood"
                 android:fontFamily="@font/oslight"
@@ -186,7 +197,7 @@
                 android:id="@+id/btn_ir_a_carrito"
                 android:layout_width="105dp"
                 android:layout_height="47dp"
-                android:layout_marginStart="240dp"
+                android:layout_marginStart="230dp"
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="22dp"
                 android:layout_marginBottom="16dp"
@@ -213,10 +224,10 @@
             android:layout_marginBottom="28dp"
             android:fontFamily="@font/osregular"
             android:text="Comida"
-            android:textSize="19sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />

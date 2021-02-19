@@ -3,7 +3,7 @@
 <!--    Fragmento de Registro-->
     <dimen name="regBoxesWidth">310dp</dimen>
     <dimen name="regBoxesHeight">50dp</dimen>
-    <dimen name="regTextSize">15sp</dimen>
+    <dimen name="regTextSize">13sp</dimen>
     <dimen name="regBoxesPadding">10dp</dimen>
 
 </resources>

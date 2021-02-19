@@ -19,10 +19,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".chat.NewMessagerActivity" />
         </activity>
-
         <activity android:name=".chat.NewMessagerActivity" />
         <activity android:name=".carrito.CarritoActivity" />
         <activity android:name=".sesion.ForgotActivity" />
+        <activity android:name=".carrito.CarritoActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".sesion.ForgotActivity"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".sesion.RegistroActivity"
             android:theme="@style/AppTheme" />
