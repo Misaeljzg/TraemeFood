@@ -13,12 +13,19 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.TraemeFood">
+        <activity android:name=".chat.LatestMessagesActivity"></activity>
+        <activity android:name=".chat.ChatLogActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".chat.NewMessagerActivity" />
+        </activity>
+        <activity android:name=".chat.NewMessagerActivity" />
+        <activity android:name=".carrito.CarritoActivity" />
+        <activity android:name=".sesion.ForgotActivity" />
         <activity android:name=".carrito.CarritoActivity"
             android:theme="@style/AppTheme"></activity>
-
         <activity android:name=".sesion.ForgotActivity"
             android:theme="@style/AppTheme"/>
-
         <activity
             android:name=".sesion.RegistroActivity"
             android:theme="@style/AppTheme" />
@@ -33,7 +40,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

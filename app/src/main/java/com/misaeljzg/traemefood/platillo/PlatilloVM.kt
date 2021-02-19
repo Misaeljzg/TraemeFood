@@ -53,4 +53,8 @@ class PlatilloVM(val database:OrdenDAO, platillo: Platillo, app: Application) : 
             }
         }
     }
+    fun  nexChat(){
+
+    }
+
 }

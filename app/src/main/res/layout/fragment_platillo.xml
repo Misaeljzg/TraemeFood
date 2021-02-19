@@ -9,6 +9,7 @@
             type="com.misaeljzg.traemefood.platillo.PlatilloVM" />
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,13 +20,18 @@
         <androidx.cardview.widget.CardView
 
             android:id="@+id/cardView"
+
+            android:layout_width="370dp"
+            android:layout_height="650dp"
+
             android:layout_width="360dp"
             android:layout_height="614dp"
 
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
@@ -49,9 +55,7 @@
                     android:layout_height="400dp"
                     android:layout_gravity="center"
                     app:imageUrl="@{viewModel.selectedPlatillo.imagenPlatillo}"
-
                     tools:src="@tools:sample/avatars" />
-
 
             </androidx.cardview.widget.CardView>
 
@@ -109,7 +113,6 @@
                 android:layout_height="32dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="390dp"
-
                 android:background="@drawable/botonescomida"
                 android:drawableTop="@drawable/less"
                 android:padding="7dp"
@@ -123,7 +126,6 @@
                 android:layout_height="32dp"
                 android:layout_marginStart="210dp"
                 android:layout_marginTop="390dp"
-
                 android:background="@drawable/botonescomida"
                 android:drawableTop="@drawable/add"
                 android:padding="7dp"
@@ -152,8 +154,13 @@
                 android:id="@+id/btn_anadir_a_orden"
                 android:layout_width="316dp"
                 android:layout_height="47dp"
+
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="521dp"
+
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="541dp"
+
 
                 android:background="@drawable/botonnaranja"
                 android:drawableRight="@drawable/addfood"
@@ -163,10 +170,28 @@
                 android:text="Añadir a orden"
                 android:textColor="#FFFFFF"
                 android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_platillo_descripcion"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_platillo_total" />
+                app:layout_constraintStart_toStartOf="@id/tv_platillo_descripcion"
+                app:layout_constraintTop_toBottomOf="@id/tv_platillo_total" />
+
+            <Button
+                android:id="@+id/btn_Chat"
+                android:layout_width="316dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="26sp"
+                android:layout_marginTop="591dp"
+                android:background="@drawable/botonnaranja"
+                android:fontFamily="@font/oslight"
+                android:drawableRight="@drawable/flecha"
+                android:text="Ir a Chat"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@id/tv_platillo_descripcion"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/tv_platillo_descripcion"
+                app:layout_constraintTop_toBottomOf="@id/tv_platillo_total"
+                />
 
             <Button
                 android:id="@+id/btn_ir_a_carrito"
