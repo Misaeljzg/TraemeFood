@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(correo , password)
                 .addOnCompleteListener {
                     if (!it.isSuccessful) return@addOnCompleteListener
-                    val intent = Intent(this, NewMessagerActivity::class.java)
+                    val intent = Intent(this,MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                 }
@@ -55,7 +55,6 @@ class LoginActivity : AppCompatActivity() {
                     android.app.AlertDialog.Builder(this).apply {
                         setTitle("Error de Inicio")
                         setMessage("Hay un Error al Encontrar el Usuario  Verifica  Usuario y Contraseña  O Vuelve a Intentarlo mas Tarde")
-
                         setPositiveButton("Aceptar", null)
                     }.show()
                 }
