@@ -13,6 +13,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.TraemeFood">
+
         <activity android:name=".chat.LatestMessagesActivity"></activity>
         <activity android:name=".chat.ChatLogActivity" >
             <meta-data
@@ -20,15 +21,15 @@
                 android:value=".chat.NewMessagerActivity" />
         </activity>
         <activity android:name=".chat.NewMessagerActivity" />
-        <activity android:name=".carrito.CarritoActivity" />
-        <activity android:name=".sesion.ForgotActivity" />
+
         <activity android:name=".carrito.CarritoActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme3"></activity>
         <activity android:name=".sesion.ForgotActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme3"/>
+
         <activity
             android:name=".sesion.RegistroActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme3" />
         <activity
             android:name=".sesion.LoginActivity"
             android:theme="@style/SplashTheme">

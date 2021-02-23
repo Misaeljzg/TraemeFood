@@ -3,13 +3,28 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorPrimaryDark">#E5E7E9</item>
+        <item name="colorPrimaryDark">#181818</item>
         <item name="colorAccent">@android:color/transparent</item>
         <item name="titleTextColor">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="windowActionBarOverlay">true</item>
     </style>
-
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">#181818</item>
+        <item name="colorAccent">@android:color/transparent</item>
+        <item name="titleTextColor">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+    <style name="AppTheme3" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">#181818</item>
+        <item name="colorAccent">@android:color/transparent</item>
+        <item name="titleTextColor">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
 
 
 
